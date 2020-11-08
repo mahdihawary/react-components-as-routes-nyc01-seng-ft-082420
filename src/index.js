@@ -2,6 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom'
 
+fetch('http://localhost:3000/api/v1/users', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json'
+  },
+  body: JSON.stringify({
+    user: {
+      username: "Messi",
+      password: "123abc",
+      user_img: "https://upload.wikimedia.org/wikipedia/commons/4/49/Syvia_of_Sylvia%27s_reaturant_N.Y.C_%28cropped%29.jpg"
+    }
+  })
+})
+  .then(r => r.json())
+  .then(console.log)
+
 const link = {
   width: '100px',
   padding: '12px',
